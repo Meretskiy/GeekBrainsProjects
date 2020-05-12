@@ -15,7 +15,7 @@ public class Homework01 {
         boolean booleanTest = true;
 
         //3
-        System.out.println(calculation(1.0F,2.5F, 3.2F, 4.1F));
+        System.out.println(resolveEquation(1.0F,2.5F, 3.2F, 4.1F));
 
         //4
         System.out.println(checkSum(2, 10));
@@ -34,7 +34,7 @@ public class Homework01 {
 
     }
     //3
-    public static float calculation(float a, float b, float c, float d) {
+    public static float resolveEquation(float a, float b, float c, float d) {
         return a * (b + (c / d));
     }
 
