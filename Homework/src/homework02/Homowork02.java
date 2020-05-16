@@ -1,3 +1,5 @@
+package homework02;
+
 public class Homowork02 {
 
     public static void printArray(int[] arr) {
