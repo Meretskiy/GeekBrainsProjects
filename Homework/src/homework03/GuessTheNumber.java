@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class GuessTheNumber {
 
-    public static void guessTheNumber() {
+    public static void guessNumber() {
 
         Random rand = new Random();
         int guessedNum = rand.nextInt(10);
@@ -34,7 +34,7 @@ public class GuessTheNumber {
             int num = sc.nextInt();
 
             if (num == 1) {
-                guessTheNumber();
+                guessNumber();
             } else if (num == 0) {
                 break;
             }
@@ -43,7 +43,7 @@ public class GuessTheNumber {
 
     public static void main(String[] args) {
 
-        guessTheNumber();
+        guessNumber();
         repeatGame();
 
     }
