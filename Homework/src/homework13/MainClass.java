@@ -2,8 +2,8 @@ package homework13;
 
 public class MainClass {
 
-    static final int SIZE = 10000000;
-    static final int H = SIZE / 2;
+    private static final int SIZE = 10000000;
+    private static final int H = SIZE / 2;
 
     public static void main(String[] args) {
 
@@ -22,7 +22,7 @@ public class MainClass {
         return arr;
     }
 
-    public static void doCalculationOneThread(float[] arr) {
+    private static void doCalculationOneThread(float[] arr) {
 
         long a = System.currentTimeMillis();
 
@@ -34,7 +34,7 @@ public class MainClass {
         System.out.println("Time one thread: " + (System.currentTimeMillis() - a));
     }
 
-    public static void doCalculationTwoThread(float[] arr) {
+    private static void doCalculationTwoThread(float[] arr) {
 
         float[] arrayOne = new float[H];
         float[] arrayTwo = new float[H];

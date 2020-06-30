@@ -2,7 +2,7 @@ package homework13;
 
 public class CalculationInArray implements Runnable{
 
-    float[] arr;
+    private float[] arr;
 
     public CalculationInArray(float[] arr) {
         this.arr = arr;
