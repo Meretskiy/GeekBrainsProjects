@@ -6,8 +6,8 @@ import java.net.Socket;
 
 public class ConsoleChatClient {
 
-    private final String SERVER_ADDR = "localhost";
-    private final int SERVER_PORT = 8189;
+    private static final String SERVER_ADDR = "localhost";
+    private static final int SERVER_PORT = 8189;
 
     public static void main(String[] args) {
 

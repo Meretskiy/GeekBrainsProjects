@@ -6,7 +6,7 @@ import java.net.Socket;
 
 public class ConsoleChatServer {
 
-    private final int SERVER_PORT = 8189;
+    private static final int SERVER_PORT = 8189;
 
     public static void main(String[] args) {
 
