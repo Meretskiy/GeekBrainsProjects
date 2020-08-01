@@ -5,28 +5,38 @@ import java.util.List;
 
 public class Box<T extends Fruit> {
 
-    private List<T> fruits = new ArrayList<>();
+    private List<T> container = new ArrayList<>();
 
     public void add(T fruit) {
-        fruits.add(fruit);
+        container.add(fruit);
     }
 
     public double getWeight() {
 
         double sum = 0.0;
 
-        for (T fruit : fruits) {
+        for (T fruit : container) {
             sum += fruit.getWeight();
         }
         return sum;
     }
 
-    public void moveAllToAnotherBox(Box<T> anotherBox) {
+    public void moveAllTo(Box<T> anotherBox) {
 
-        for (T fruit : fruits) {
-            anotherBox.add(fruit);
+        if (anotherBox == null) {
+            return;
         }
-        fruits.clear();
+
+        if (this.container.isEmpty()) {
+            return;
+        }
+
+        if (this == anotherBox) {
+            return;
+        }
+
+        anotherBox.container.addAll(this.container);
+        this.container.clear();
     }
 
     public boolean compare(Box<?> anotherBox) {

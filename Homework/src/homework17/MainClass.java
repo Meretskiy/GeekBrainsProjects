@@ -47,7 +47,7 @@ public class MainClass {
         System.out.println("Compare AppleBox1 and OrangeBox1: " + appleBox1.compare(orangeBox1));
         System.out.println("Compare AppleBox2 and OrangeBox1: " + appleBox2.compare(orangeBox1));
 
-        appleBox1.moveAllToAnotherBox(appleBox2);
+        appleBox1.moveAllTo(appleBox2);
         System.out.println("AppleBox1 weight is: " + appleBox1.getWeight());
         System.out.println("AppleBox2 weight is: " + appleBox2.getWeight());
 

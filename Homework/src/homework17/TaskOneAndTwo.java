@@ -51,11 +51,6 @@ public class TaskOneAndTwo {
 
     public static <T> List<T> transformArrayToArrayList(T[] array) {
 
-        List<T> arrayList = new ArrayList<>();
-
-        for (int i = 0; i < array.length; i++) {
-            arrayList.add(array[i]);
-        }
-        return arrayList;
+        return new ArrayList<>(Arrays.asList(array));
     }
 }
