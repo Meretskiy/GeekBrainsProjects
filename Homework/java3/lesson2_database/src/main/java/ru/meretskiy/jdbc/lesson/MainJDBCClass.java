@@ -110,7 +110,8 @@ public class MainJDBCClass {
         //регистрация нового драйвера
         Class.forName("org.sqlite.JDBC");
         //подключение базы через драйвер менеджер
-        connection = DriverManager.getConnection("jdbc:sqlite:mainLesson3_2.db");
+        connection = DriverManager.getConnection(
+                "jdbc:sqlite:java3/lesson2_database/src/main/resources/mainLesson3_2.db");
         statement = connection.createStatement();
     }
 
