@@ -14,10 +14,10 @@ public class GuessTheNumber {
         Scanner sc = new Scanner(System.in);
 
         for (int i = 0; i < 3; i++) {
-            System.out.println("Попытка " + (i + 1) + ". Введите чмсло:");
+            System.out.println("Попытка " + (i + 1) + ". Press number:");
             int num = sc.nextInt();
             if (guessedNum == num) {
-                System.out.println("Вы выйграли!!!");
+                System.out.println("You win!!!");
                 break;
             } else if (guessedNum > num) {
                 System.out.println("Загаданное число больше!");
