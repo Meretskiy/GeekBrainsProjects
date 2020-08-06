@@ -39,6 +39,7 @@ public class ClientHandler {
                                 }
                             }
                         });
+                        thread.setDaemon(true);
                         thread.start();
                         long endTimeMillis = System.currentTimeMillis() + 120000;
                         while (thread.isAlive()) {
@@ -64,13 +65,13 @@ public class ClientHandler {
     public void authentication() throws IOException {
         while (true) {
             String str = in.readUTF();
-            if (str.startsWith("/auth")) {
+            if (str.startsWith("/auth ")) {
                 String[] parts = str.split("\\s");
                 String nick =
                         myServer.getAuthService().getNick(parts[1], parts[2]);
                 if (nick != null) {
                     if (!myServer.isNickBusy(nick)) {
-                        sendMsg("auth ok " + nick);
+                        sendMsg("/authok " + nick);
                         name = nick;
                         myServer.broadcastMsg(name + " enter chat");
                         myServer.subscribe(this);
@@ -90,24 +91,24 @@ public class ClientHandler {
             String strFromClient = in.readUTF();
             System.out.println(String.format("from %s : %s", name, strFromClient));
 
-            if (strFromClient.equals("/end")) {
-                return;
+            if (strFromClient.equals("/end ")) {
+                break;
             }
 
-            if (strFromClient.startsWith("/w")) {
+            if (strFromClient.startsWith("/w ")) {
                 checkPrivateMessage(strFromClient);
             } else {
                 myServer.broadcastMsg(name + " : " + strFromClient);
             }
 
-            if (strFromClient.startsWith("/changeNick")) {
+            if (strFromClient.startsWith("/changeNick ")) {
                 String[] parts = strFromClient.split("\\s");
                 String newNick = myServer.getAuthService().changeNick(name, parts[1]);
                 if (newNick != null) {
-                    sendMsg("change ok");
+                    sendMsg("/changeOk ");
                     name = newNick;
                 } else {
-                    sendMsg("change fail");
+                    sendMsg("/changeFail ");
                 }
             }
             continue;

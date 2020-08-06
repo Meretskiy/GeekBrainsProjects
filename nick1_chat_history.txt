@@ -1,0 +1,128 @@
+nick1 : ada
+nick1 : adad
+nick1 : adawd
+nick1 : awda
+
+nick1 : dawdaw
+nick1 : wadadawd
+nick1 : awdawd
+nick1 : awdadaw
+nick1 : wadawdawdawd
+nick1 : aaaaa
+nick1 : aadad
+nick1 : adad
+nick1 : wdawdawd
+nick1 : awdawdawd
+nick1 : awdawd
+nick1 : awdawdawd
+nick1 : awdawda
+nick1 : awdawdawd
+nick1 : awdad
+nick1 : awdawdawd
+nick1 : aaaaaaaa
+nick1 : adawda
+nick1 : awdawda
+nick1 : awdawd
+nick1 : ad
+nick1 : ad
+nick1 : a
+nick1 : da
+nick1 : da
+nick1 : da
+nick1 : wd
+nick1 : ad
+nick1 : aw
+nick1 : daw
+nick1 : daw
+nick1 : d
+nick1 : awd
+nick1 : awd
+nick1 : awdaaaaaaaa
+nick1 : aaaaaa
+nick1 : aaaa
+nick1 : aaaa
+nick1 : adada
+nick1 : awdawdaw
+nick1 : dawdawda
+nick1 :
+nick1 : ad
+nick1 : aw
+nick1 : daw
+nick1 : d
+nick1 : awd
+nick1 : aw
+nick1 : daw
+nick1 : d
+nick1 : aw
+nick1 : daw
+nick1 : d
+nick1 : awd
+nick1 : aw
+nick1 : d
+nick1 : a
+nick1 : dasd
+nick2 enter chat
+nick2 : wadawd
+nick2 : wadada
+nick2 : awdawd
+[nick1] to [nick2] : efsf
+nick2 enter chat
+nick1 : adadawdadawdadadawd
+nick1 : /chengeNick nickN
+nick1 : wadawd
+nick1 : awdada
+nick1 : wadawd
+nick1 : /changeNick nickN
+nick1 : wadawd
+nick1 : Win!
+nick2 enter chat
+nick2 : awdaw
+[nick2] to [nick1] : Ho HO HO!!!
+nick2 exit chat
+nick1 : a
+nick1 : a
+nick1 : a
+nick1 : adwad
+nick1 : wadawd
+nick1 : a
+nick1 : a
+nick1 : w
+nick1 : d
+nick1 : v
+nick1 : a
+nick1 : w
+nick1 : 
+nick1 : dwa
+nick1 : ad
+nick1 : awa
+nick1 : 
+nick1 : a
+nick1 : a
+nick1 : a
+nick1 : a
+nick1 : d
+nick1 : wadw
+nick1 : 
+nick1 : 
+nick1 : df
+nick1 : sdf
+nick1 : s
+nick1 : fs
+nick1 : df
+nick1 : sdf
+nick1 : 
+nick1 : r
+nick1 : g
+nick1 : rf
+nick1 : sf
+nick1 : se
+nick1 : f
+nick1 : sf
+nick1 : es
+nick1 : g
+nick1 : 
+nick1 : dsf
+nick1 : se
+nick1 : f
+nick1 : ef
+nick1 : s
