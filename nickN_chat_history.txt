@@ -1,0 +1,10 @@
+nickN : dawd
+nickN : wadad
+nickN : wadad
+nickN : awdada
+nickN : awdawd
+nickN : wadawd
+nickN : awdawd
+nickN : awdawd
+nickN : awdawd
+nickN : /changeNick nick1

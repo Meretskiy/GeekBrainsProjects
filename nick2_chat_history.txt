@@ -1,0 +1,46 @@
+nick2 : wadad
+nick2 : awdad
+nick2 : awdawd
+nick2 : awdadadad
+nick2 : aaa
+nick2 : a
+nick2 :
+nick2 :
+nick2 :
+nick2 :
+nick2 :
+nick2 : adawd
+nick2 : aadawd
+nick2 : awdawd
+nick2 : wadadawd
+nick2 : dawdawdawd
+nick2 : 122w
+nick2 : wadadadad
+nick2 : awdawdaaa dawdawd
+nick2 : awdd awdawdawd
+nick2 : daawd dawdada
+nick2 : sfsf
+nick2 : sfsfsefsef
+nick2 : sefsefsef
+nick2 : sefsefsefsef
+nick2 : sefsfsefsxdsfsefsfsef
+nick2 : wadawd
+nick2 : wadada
+nick2 : awdawd
+[nick1] to [nick2] : efsf
+nick1 exit chat
+nick1 : adadawdadawdadadawd
+nick1 : /chengeNick nickN
+nick1 : wadawd
+nick1 : awdada
+nick1 : wadawd
+nick1 exit chat
+nick2 : sadaw
+nick2 : wadawda
+nick2 : awdadad
+nick2 : awdawdawd
+nick2 : wadada
+nick2 : awdaw
+[nick2] to [nick1] : Ho HO HO!!!
+nick2 : a
+nick2 : awda
