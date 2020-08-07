@@ -15,6 +15,7 @@
         <module>lesson1_generics</module>
         <module>lesson2_database</module>
         <module>lesson3_IO</module>
+        <module>lesson4_threads</module>
     </modules>
 
     <properties>
