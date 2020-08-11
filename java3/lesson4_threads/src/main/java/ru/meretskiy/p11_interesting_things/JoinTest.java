@@ -1,4 +1,4 @@
-package ru.geekbrains.p11_interesting_things;
+package ru.meretskiy.p11_interesting_things;
 
 /**
  * Created by FlameXander on 10.txt.10.txt.2016.

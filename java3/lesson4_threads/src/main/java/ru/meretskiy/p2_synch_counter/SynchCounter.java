@@ -1,4 +1,4 @@
-package ru.geekbrains.p2_synch_counter;
+package ru.meretskiy.p2_synch_counter;
 
 
 public class SynchCounter {

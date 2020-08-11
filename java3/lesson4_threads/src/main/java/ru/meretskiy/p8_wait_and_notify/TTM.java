@@ -1,4 +1,4 @@
-package ru.geekbrains.p8_wait_and_notify;
+package ru.meretskiy.p8_wait_and_notify;
 
 public class TTM {
     private static final Object mon = new Object();

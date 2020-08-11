@@ -1,4 +1,4 @@
-package ru.geekbrains.p4_synch_blocks;
+package ru.meretskiy.p4_synch_blocks;
 
 
 public class SynchCounter {

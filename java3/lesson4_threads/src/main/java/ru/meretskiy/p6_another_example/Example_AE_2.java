@@ -1,4 +1,4 @@
-package ru.geekbrains.p6_another_example;
+package ru.meretskiy.p6_another_example;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

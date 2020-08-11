@@ -1,4 +1,4 @@
-package ru.geekbrains.p6_another_example;
+package ru.meretskiy.p6_another_example;
 
 public class Example_AE_1 {
     static int x = 0;

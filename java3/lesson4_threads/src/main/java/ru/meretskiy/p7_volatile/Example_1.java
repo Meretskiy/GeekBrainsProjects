@@ -1,4 +1,4 @@
-package ru.geekbrains.p7_volatile;
+package ru.meretskiy.p7_volatile;
 
 public class Example_1 {
     static volatile int x = 0;

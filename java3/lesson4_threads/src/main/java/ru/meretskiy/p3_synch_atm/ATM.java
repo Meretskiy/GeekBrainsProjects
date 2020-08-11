@@ -1,4 +1,4 @@
-package ru.geekbrains.p3_synch_atm;
+package ru.meretskiy.p3_synch_atm;
 
 public class ATM {
     private int money;

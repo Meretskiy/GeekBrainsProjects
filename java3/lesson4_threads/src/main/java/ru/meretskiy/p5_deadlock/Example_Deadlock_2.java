@@ -1,4 +1,4 @@
-package ru.geekbrains.p5_deadlock;
+package ru.meretskiy.p5_deadlock;
 
 public class Example_Deadlock_2 {
     private static final Object lock1 = new Object();

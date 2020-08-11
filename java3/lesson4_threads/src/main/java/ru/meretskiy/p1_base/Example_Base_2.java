@@ -1,4 +1,4 @@
-package ru.geekbrains.p1_base;
+package ru.meretskiy.p1_base;
 
 public class Example_Base_2 {
     public static void main(String[] args) {

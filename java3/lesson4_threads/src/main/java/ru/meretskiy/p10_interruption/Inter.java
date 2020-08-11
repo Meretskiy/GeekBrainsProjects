@@ -1,4 +1,4 @@
-package ru.geekbrains.p10_interruption;
+package ru.meretskiy.p10_interruption;
 
 public class Inter implements Runnable {
     private volatile boolean running = true;

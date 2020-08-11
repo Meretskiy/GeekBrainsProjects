@@ -1,4 +1,4 @@
-package ru.geekbrains.p1_base;
+package ru.meretskiy.p1_base;
 
 public class RunnableExample implements Runnable {
     @Override

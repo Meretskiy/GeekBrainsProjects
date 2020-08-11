@@ -1,4 +1,4 @@
-package ru.geekbrains.p11_interesting_things;
+package ru.meretskiy.p11_interesting_things;
 
 public class DaemonTest {
     public static void main(String[] args) {

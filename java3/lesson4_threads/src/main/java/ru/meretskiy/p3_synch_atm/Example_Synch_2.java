@@ -1,4 +1,4 @@
-package ru.geekbrains.p3_synch_atm;
+package ru.meretskiy.p3_synch_atm;
 
 public class Example_Synch_2 {
     public static void main(String[] args) {
