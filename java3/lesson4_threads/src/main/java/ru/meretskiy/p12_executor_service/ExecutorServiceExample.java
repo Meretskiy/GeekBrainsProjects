@@ -1,4 +1,4 @@
-package ru.geekbrains.p12_executor_service;
+package ru.meretskiy.p12_executor_service;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
