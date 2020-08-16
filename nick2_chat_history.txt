@@ -44,3 +44,8 @@ nick2 : awdaw
 [nick2] to [nick1] : Ho HO HO!!!
 nick2 : a
 nick2 : awda
+nick2 : aaa
+[nick2] to [nick1] : aaaaa
+nick2 : /end
+nick2 : 
+nick2 : 

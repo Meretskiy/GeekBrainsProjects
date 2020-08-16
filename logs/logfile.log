@@ -1,0 +1,38 @@
+INFO  2020-08-17 01:03:36 [main] ru.meretskiy.server.MyServer (MyServer.java:35) - Server waiting connecting...
+INFO  2020-08-17 01:42:12 [main] ru.meretskiy.server.BaseAuthService (BaseAuthService.java:17) - Service of authentication is run
+INFO  2020-08-17 01:42:12 [main] ru.meretskiy.server.MyServer (MyServer.java:35) - Server waiting connecting...
+INFO  2020-08-17 01:42:25 [main] ru.meretskiy.server.MyServer (MyServer.java:37) - Client connected...
+INFO  2020-08-17 01:42:25 [main] ru.meretskiy.server.MyServer (MyServer.java:35) - Server waiting connecting...
+INFO  2020-08-17 01:42:39 [Thread-0] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - /authok nick1
+INFO  2020-08-17 01:42:39 [Thread-0] ru.meretskiy.server.MyServer (MyServer.java:59) - nick1 enter chat
+INFO  2020-08-17 01:42:41 [pool-2-thread-1] ru.meretskiy.server.MyServer (MyServer.java:59) - nick1 : ada
+INFO  2020-08-17 01:42:41 [pool-2-thread-1] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick1 : ada
+INFO  2020-08-17 01:42:43 [pool-2-thread-1] ru.meretskiy.server.MyServer (MyServer.java:59) - nick1 : aaaa
+INFO  2020-08-17 01:42:43 [pool-2-thread-1] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick1 : aaaa
+INFO  2020-08-17 01:43:02 [main] ru.meretskiy.server.MyServer (MyServer.java:37) - Client connected...
+INFO  2020-08-17 01:43:02 [main] ru.meretskiy.server.MyServer (MyServer.java:35) - Server waiting connecting...
+INFO  2020-08-17 01:43:15 [Thread-1] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - /authok nick2
+INFO  2020-08-17 01:43:15 [Thread-1] ru.meretskiy.server.MyServer (MyServer.java:59) - nick2 enter chat
+INFO  2020-08-17 01:43:15 [Thread-1] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick2 enter chat
+INFO  2020-08-17 01:43:16 [pool-2-thread-2] ru.meretskiy.server.MyServer (MyServer.java:59) - nick2 : aaa
+INFO  2020-08-17 01:43:16 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick2 : aaa
+INFO  2020-08-17 01:43:16 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick2 : aaa
+INFO  2020-08-17 01:43:24 [pool-2-thread-2] ru.meretskiy.server.MyServer (MyServer.java:66) - aaaaa
+INFO  2020-08-17 01:43:24 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - [nick2] to [nick1] : aaaaa
+INFO  2020-08-17 01:43:24 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - [nick2] to [nick1] : aaaaa
+INFO  2020-08-17 01:43:34 [pool-2-thread-2] ru.meretskiy.server.MyServer (MyServer.java:59) - nick2 : /end
+INFO  2020-08-17 01:43:34 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick2 : /end
+INFO  2020-08-17 01:43:34 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick2 : /end
+INFO  2020-08-17 01:43:35 [pool-2-thread-2] ru.meretskiy.server.MyServer (MyServer.java:59) - nick2 : 
+INFO  2020-08-17 01:43:35 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick2 : 
+INFO  2020-08-17 01:43:35 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick2 : 
+INFO  2020-08-17 01:43:36 [pool-2-thread-2] ru.meretskiy.server.MyServer (MyServer.java:59) - nick2 : 
+INFO  2020-08-17 01:43:36 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick2 : 
+INFO  2020-08-17 01:43:36 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick2 : 
+WARN  2020-08-17 01:43:39 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:49) - java.io.EOFException
+INFO  2020-08-17 01:43:39 [pool-2-thread-2] ru.meretskiy.server.MyServer (MyServer.java:59) - nick2 exit chat
+INFO  2020-08-17 01:43:39 [pool-2-thread-2] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick2 exit chat
+INFO  2020-08-17 01:43:53 [pool-2-thread-1] ru.meretskiy.server.MyServer (MyServer.java:59) - nick1 : go sleep
+INFO  2020-08-17 01:43:53 [pool-2-thread-1] ru.meretskiy.server.ClientHandler (ClientHandler.java:115) - nick1 : go sleep
+WARN  2020-08-17 01:43:55 [pool-2-thread-1] ru.meretskiy.server.ClientHandler (ClientHandler.java:49) - java.io.EOFException
+INFO  2020-08-17 01:43:55 [pool-2-thread-1] ru.meretskiy.server.MyServer (MyServer.java:59) - nick1 exit chat

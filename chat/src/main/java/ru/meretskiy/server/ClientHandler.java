@@ -31,7 +31,7 @@ public class ClientHandler {
                         try {
                             authentication();
                         } catch (IOException exception) {
-                            exception.printStackTrace();
+                            MyServer.getLogger().warn(exception);
                         }
                     });
                     thread.setDaemon(true);
@@ -39,20 +39,20 @@ public class ClientHandler {
                     long endTimeMillis = System.currentTimeMillis() + 120000;
                     while (thread.isAlive()) {
                         if (System.currentTimeMillis() > endTimeMillis) {
-                            System.out.println("Time authentication out...");
+                            MyServer.getLogger().info("Time authentication out...");
                             closeConnection();
                             return;
                         }
                     }
                     readMessage();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    MyServer.getLogger().warn(e);
                 } finally {
                     closeConnection();
                 }
             });
         } catch (IOException e) {
-            throw new RuntimeException("Problems in create client...");
+            MyServer.getLogger().warn("Problems in create client...", e);
         }
     }
 
@@ -83,7 +83,7 @@ public class ClientHandler {
     public void readMessage() throws IOException {
         while (true) {
             String strFromClient = in.readUTF();
-            System.out.println(String.format("from %s : %s", name, strFromClient));
+            MyServer.getLogger().info(String.format("from %s : %s", name, strFromClient));
 
             if (strFromClient.equals("/end ")) {
                 break;
@@ -112,8 +112,9 @@ public class ClientHandler {
     public void sendMsg(String msg) {
         try {
             out.writeUTF(msg);
+            MyServer.getLogger().info(msg);
         } catch (IOException e) {
-            e.printStackTrace();
+            MyServer.getLogger().warn(e);
         }
     }
 
@@ -128,17 +129,17 @@ public class ClientHandler {
         try {
             in.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            MyServer.getLogger().warn(e);
         }
         try {
             out.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            MyServer.getLogger().warn(e);
         }
         try {
             socket.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            MyServer.getLogger().warn(e);
         }
     }
 }

@@ -14,10 +14,10 @@ public class BaseAuthService implements AuthService {
             connection = DriverManager.getConnection("jdbc:sqlite:chat/chatAuthBase.db");
             statement = connection.createStatement();
 
-            System.out.println("Service of authentication is run");
+            MyServer.getLogger().info("Service of authentication is run");
 
         } catch (Exception e) {
-            e.printStackTrace();
+            MyServer.getLogger().warn(e);
         }
     }
 
@@ -26,7 +26,7 @@ public class BaseAuthService implements AuthService {
         try {
             connection.close();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            MyServer.getLogger().warn(throwables);
         }
     }
 
@@ -39,6 +39,7 @@ public class BaseAuthService implements AuthService {
             ResultSet rs = statement.executeQuery(sqlSelect);
             return rs.getString("nick");
         } catch (SQLException throwables) {
+            MyServer.getLogger().warn(throwables);
             return null;
         }
     }
@@ -50,6 +51,7 @@ public class BaseAuthService implements AuthService {
             statement.executeUpdate(sqlUpdate);
             return newNick;
         } catch (SQLException throwables) {
+            MyServer.getLogger().warn(throwables);
             return null;
         }
     }
