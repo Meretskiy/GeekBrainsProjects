@@ -32,12 +32,30 @@ public class MainClass {
         return Arrays.copyOfRange(arr, indexFirstElement, arr.length);
     }
 
-    public boolean isContainsOneOrFour(int[] arr, int containsValue1, int containsValue2) {
+//    public boolean isContainsOneOrFour(int[] arr, int containsValue1, int containsValue2) {
+//        for (int i : arr) {
+//            if (i == containsValue1 || i == containsValue2) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+
+    public boolean isContainsOneAndFour(int[] arr) {
+        boolean one = false;
+        boolean four = false;
         for (int i : arr) {
-            if (i == containsValue1 || i == containsValue2) {
-                return true;
+            if (i == 1 || i == 4) {
+                if (i == 1) {
+                    one = true;
+                }
+                if (i == 4) {
+                    four = true;
+                }
+            } else {
+                throw new RuntimeException("An array of not only ones and fours...");
             }
         }
-        return false;
+        return one && four;
     }
 }
