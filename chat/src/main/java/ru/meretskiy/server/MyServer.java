@@ -5,15 +5,22 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MyServer {
 
     private final int PORT = 8189;
     private List<ClientHandler> clients;
     private AuthService authService;
+    private ExecutorService executorService = Executors.newCachedThreadPool();
 
     public AuthService getAuthService() {
         return authService;
+    }
+
+    public ExecutorService getExecutorService() {
+        return executorService;
     }
 
     public MyServer() {

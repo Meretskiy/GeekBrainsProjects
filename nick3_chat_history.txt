@@ -1,0 +1,7 @@
+nick3 : awdawd
+nick3 : awdad
+nick2 : a
+nick1 : a
+nick1 exit chat
+nick2 exit chat
+nick3 : execut

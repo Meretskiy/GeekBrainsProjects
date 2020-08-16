@@ -25,38 +25,32 @@ public class ClientHandler {
             this.in = new DataInputStream(socket.getInputStream());
             this.out = new DataOutputStream(socket.getOutputStream());
             this.name = "";
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Thread thread = new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                try {
-                                    authentication();
-                                } catch (IOException exception) {
-                                    exception.printStackTrace();
-                                }
-                            }
-                        });
-                        thread.setDaemon(true);
-                        thread.start();
-                        long endTimeMillis = System.currentTimeMillis() + 120000;
-                        while (thread.isAlive()) {
-                            if (System.currentTimeMillis() > endTimeMillis) {
-                                System.out.println("Time authentication out...");
-                                closeConnection();
-                                return;
-                            }
+            myServer.getExecutorService().execute(() -> {
+                try {
+                    Thread thread = new Thread(() -> {
+                        try {
+                            authentication();
+                        } catch (IOException exception) {
+                            exception.printStackTrace();
                         }
-                        readMessage();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } finally {
-                        closeConnection();
+                    });
+                    thread.setDaemon(true);
+                    thread.start();
+                    long endTimeMillis = System.currentTimeMillis() + 120000;
+                    while (thread.isAlive()) {
+                        if (System.currentTimeMillis() > endTimeMillis) {
+                            System.out.println("Time authentication out...");
+                            closeConnection();
+                            return;
+                        }
                     }
+                    readMessage();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    closeConnection();
                 }
-            }).start();
+            });
         } catch (IOException e) {
             throw new RuntimeException("Problems in create client...");
         }
