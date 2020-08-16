@@ -16,6 +16,8 @@
         <module>lesson2_database</module>
         <module>lesson3_IO</module>
         <module>lesson4_threads</module>
+        <module>lesson5_concurrent</module>
+        <module>lesson6_logAndTests</module>
     </modules>
 
     <properties>
