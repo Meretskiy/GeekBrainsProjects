@@ -1,5 +1,7 @@
 package ru.meretskiy.server;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -14,6 +16,7 @@ public class MyServer {
     private List<ClientHandler> clients;
     private AuthService authService;
     private ExecutorService executorService = Executors.newCachedThreadPool();
+    private static final Logger logger = LogManager.getLogger(MyServer.class);
 
     public AuthService getAuthService() {
         return authService;
@@ -29,13 +32,13 @@ public class MyServer {
             authService.start();
             clients = new ArrayList<>();
             while (true) {
-                System.out.println("Server waiting connecting...");
+                logger.info("Server waiting connecting...");
                 Socket socket = server.accept();
-                System.out.println("Client connected...");
+                logger.info("Client connected...");
                 new ClientHandler(this, socket);
             }
         } catch (IOException exc) {
-            System.out.println("Server error!");
+            logger.warn("Server error! ", exc);
         } finally {
             if (authService != null) {
                 authService.stop();
@@ -53,12 +56,14 @@ public class MyServer {
     }
 
     public synchronized void broadcastMsg(String msg) {
+        logger.info(msg);
         for (ClientHandler o : clients) {
             o.sendMsg(msg);
         }
     }
 
     public synchronized void privateMsg(ClientHandler currentClient, String distClient, String msg) {
+        logger.info(msg);
         for (ClientHandler o : clients) {
             if (distClient.equalsIgnoreCase(o.getName())) {
                 o.sendMsg("[" + currentClient.getName() + "] to [" + distClient + "] : " + msg);

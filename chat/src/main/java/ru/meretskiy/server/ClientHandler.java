@@ -1,5 +1,8 @@
 package ru.meretskiy.server;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -11,6 +14,7 @@ public class ClientHandler {
     private Socket socket;
     private DataInputStream in;
     private DataOutputStream out;
+    private static final Logger logger = LogManager.getLogger(ClientHandler.class);
 
     private String name;
 
@@ -31,7 +35,7 @@ public class ClientHandler {
                         try {
                             authentication();
                         } catch (IOException exception) {
-                            exception.printStackTrace();
+                            logger.warn(exception);
                         }
                     });
                     thread.setDaemon(true);
@@ -39,20 +43,20 @@ public class ClientHandler {
                     long endTimeMillis = System.currentTimeMillis() + 120000;
                     while (thread.isAlive()) {
                         if (System.currentTimeMillis() > endTimeMillis) {
-                            System.out.println("Time authentication out...");
+                            logger.info("Time authentication out...");
                             closeConnection();
                             return;
                         }
                     }
                     readMessage();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    logger.warn(e);
                 } finally {
                     closeConnection();
                 }
             });
         } catch (IOException e) {
-            throw new RuntimeException("Problems in create client...");
+            logger.warn("Problems in create client...", e);
         }
     }
 
@@ -83,7 +87,7 @@ public class ClientHandler {
     public void readMessage() throws IOException {
         while (true) {
             String strFromClient = in.readUTF();
-            System.out.println(String.format("from %s : %s", name, strFromClient));
+            logger.info(String.format("from %s : %s", name, strFromClient));
 
             if (strFromClient.equals("/end ")) {
                 break;
@@ -112,8 +116,9 @@ public class ClientHandler {
     public void sendMsg(String msg) {
         try {
             out.writeUTF(msg);
+            logger.info(msg);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.warn(e);
         }
     }
 
@@ -128,17 +133,17 @@ public class ClientHandler {
         try {
             in.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.warn(e);
         }
         try {
             out.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.warn(e);
         }
         try {
             socket.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.warn(e);
         }
     }
 }

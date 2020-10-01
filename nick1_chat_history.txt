@@ -126,3 +126,24 @@ nick1 : se
 nick1 : f
 nick1 : ef
 nick1 : s
+nick1 : ada
+nick1 : aaaa
+nick2 enter chat
+nick2 : aaa
+[nick2] to [nick1] : aaaaa
+nick2 : /end
+nick2 : 
+nick2 : 
+nick2 exit chat
+nick1 : go sleep
+nick1 : dsds
+nick1 : ssss
+nick1 : sds
+nick1 : sdsd
+nick1 : /exit
+nick1 : 
+nick1 : 
+nick1 : 
+nick1 : /end
+nick1 : 
+nick1 : 
