@@ -1,13 +1,11 @@
 package ru.meretskiy.homework21_concurrent;
 
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Car implements Runnable {
 
     private static int CARS_COUNT;
-    private static CyclicBarrier cyclicBarrier;
-    private static AtomicInteger atomicInteger = new AtomicInteger();
 
     static {
         CARS_COUNT = 0;
@@ -25,23 +23,16 @@ public class Car implements Runnable {
         return speed;
     }
 
-    public static CyclicBarrier getCyclicBarrier() {
-        return cyclicBarrier;
-    }
+    private CyclicBarrier cyclicBarrier;
+    private CountDownLatch countDownLatch;
 
-    public static void setCyclicBarrier(CyclicBarrier cyclicBarrier) {
-        Car.cyclicBarrier = cyclicBarrier;
-    }
-
-    public static AtomicInteger getAtomicInteger() {
-        return atomicInteger;
-    }
-
-    public Car(Race race, int speed) {
+    public Car(Race race, int speed, CyclicBarrier cyclicBarrier, CountDownLatch countDownLatch) {
         this.race = race;
         this.speed = speed;
         CARS_COUNT++;
         this.name = "Участник #" + CARS_COUNT;
+        this.cyclicBarrier = cyclicBarrier;
+        this.countDownLatch = countDownLatch;
     }
 
     @Override
@@ -51,15 +42,16 @@ public class Car implements Runnable {
             Thread.sleep(500 + (int)(Math.random() * 800));
             System.out.println(this.name + " готов");
             cyclicBarrier.await();
+            cyclicBarrier.await();
         } catch (Exception e) {
             e.printStackTrace();
         }
         for (int i = 0; i < race.getStages().size(); i++) {
             race.getStages().get(i).go(this);
         }
-        atomicInteger.incrementAndGet();
-        if (atomicInteger.get() == 1) {
+        if (!race.isWinnerExists() .getAndSet(true)) {
             System.out.println(this.name + " WIN!!!");
         }
+        countDownLatch.countDown();
     }
 }
