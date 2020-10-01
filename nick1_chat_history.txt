@@ -136,3 +136,14 @@ nick2 :
 nick2 : 
 nick2 exit chat
 nick1 : go sleep
+nick1 : dsds
+nick1 : ssss
+nick1 : sds
+nick1 : sdsd
+nick1 : /exit
+nick1 : 
+nick1 : 
+nick1 : 
+nick1 : /end
+nick1 : 
+nick1 : 

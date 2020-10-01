@@ -14,7 +14,7 @@ package ru.meretskiy.homework22_logAndTests;
 
 import java.util.Arrays;
 
-public class MainClass {
+public class ArrayUtils {
 
     public int[] splitArray(int[] arr, int splitValue) {
         if (arr.length == 0) {
@@ -45,15 +45,14 @@ public class MainClass {
         boolean one = false;
         boolean four = false;
         for (int i : arr) {
-            if (i == 1 || i == 4) {
-                if (i == 1) {
-                    one = true;
-                }
-                if (i == 4) {
-                    four = true;
-                }
-            } else {
-                throw new RuntimeException("An array of not only ones and fours...");
+            if (i == 1) {
+                one = true;
+            }
+            if (i == 4) {
+                four = true;
+            }
+            if (i != 1 && i != 4) {
+                return false;
             }
         }
         return one && four;

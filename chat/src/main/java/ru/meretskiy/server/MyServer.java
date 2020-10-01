@@ -32,13 +32,13 @@ public class MyServer {
             authService.start();
             clients = new ArrayList<>();
             while (true) {
-                getLogger().info("Server waiting connecting...");
+                logger.info("Server waiting connecting...");
                 Socket socket = server.accept();
-                getLogger().info("Client connected...");
+                logger.info("Client connected...");
                 new ClientHandler(this, socket);
             }
         } catch (IOException exc) {
-            getLogger().warn("Server error! ", exc);
+            logger.warn("Server error! ", exc);
         } finally {
             if (authService != null) {
                 authService.stop();
@@ -56,14 +56,14 @@ public class MyServer {
     }
 
     public synchronized void broadcastMsg(String msg) {
-        getLogger().info(msg);
+        logger.info(msg);
         for (ClientHandler o : clients) {
             o.sendMsg(msg);
         }
     }
 
     public synchronized void privateMsg(ClientHandler currentClient, String distClient, String msg) {
-        getLogger().info(msg);
+        logger.info(msg);
         for (ClientHandler o : clients) {
             if (distClient.equalsIgnoreCase(o.getName())) {
                 o.sendMsg("[" + currentClient.getName() + "] to [" + distClient + "] : " + msg);
@@ -80,9 +80,5 @@ public class MyServer {
 
     public synchronized void subscribe(ClientHandler o) {
         clients.add(o);
-    }
-
-    public static Logger getLogger() {
-        return logger;
     }
 }
