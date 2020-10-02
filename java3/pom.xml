@@ -18,6 +18,7 @@
         <module>lesson4_threads</module>
         <module>lesson5_concurrent</module>
         <module>lesson6_logAndTests</module>
+        <module>lesson7_reflectionAndAnno</module>
     </modules>
 
     <properties>
