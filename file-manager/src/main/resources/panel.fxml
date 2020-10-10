@@ -8,9 +8,9 @@
       xmlns="http://javafx.com/javafx/11.0.1" fx:controller="ru.meretskiy.file.manager.PanelController">
 
     <HBox>
-        <ComboBox/>
-        <TextField HBox.hgrow="ALWAYS" editable="false"/>
-        <Button text="Up"/>
+        <ComboBox fx:id="disksBox" onAction="#selectDiscAction"/>
+        <TextField fx:id="pathField" HBox.hgrow="ALWAYS" editable="false"/>
+        <Button text="Up" onAction="#btnPathUpAction"/>
     </HBox>
 
     <TableView VBox.vgrow="ALWAYS" fx:id="filesTable"/>
