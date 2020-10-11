@@ -19,11 +19,11 @@
     </HBox>
 
     <HBox spacing="5">
-        <Button maxWidth="Infinity" text="Copy" HBox.hgrow="ALWAYS"/>
-        <Button maxWidth="Infinity" text="Move" HBox.hgrow="ALWAYS"/>
-        <Button maxWidth="Infinity" text="Delete" HBox.hgrow="ALWAYS"/>
-        <Button maxWidth="Infinity" text="View" HBox.hgrow="ALWAYS"/>
-        <Button maxWidth="Infinity" text="Exit" HBox.hgrow="ALWAYS" onAction="#exitAction"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Copy" HBox.hgrow="ALWAYS" onAction="#copyBtnAction"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Move" HBox.hgrow="ALWAYS"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Delete" HBox.hgrow="ALWAYS"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="View" HBox.hgrow="ALWAYS"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Exit" HBox.hgrow="ALWAYS" onAction="#exitAction"/>
         <padding>
             <Insets bottom="5.0" right="5.0" top="5.0"/>
         </padding>

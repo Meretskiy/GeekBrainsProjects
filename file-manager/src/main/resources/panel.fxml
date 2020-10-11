@@ -15,4 +15,10 @@
 
     <TableView VBox.vgrow="ALWAYS" fx:id="filesTable"/>
 
+    <properties>
+        <ctrl>
+            <fx:reference source="controller"/>
+        </ctrl>
+    </properties>
+
 </VBox>
