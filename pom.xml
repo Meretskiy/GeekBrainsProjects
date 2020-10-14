@@ -23,6 +23,8 @@
         <module>java-nio</module>
         <module>java-Netty</module>
         <module>file-manager</module>
+        <module>netty-file-transfer</module>
+        <module>netty-servers</module>
     </modules>
 
 
