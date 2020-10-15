@@ -9,23 +9,25 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public class DiscardServer {
     public void run() throws Exception {
-        EventLoopGroup bossGroup = new NioEventLoopGroup();
-        EventLoopGroup workerGroup = new NioEventLoopGroup();
+
+        //пулы потоков Netty, аналог ExecutorService
+        EventLoopGroup bossGroup = new NioEventLoopGroup(); //пул потоков предназначенный для обработки входящих подключений
+        EventLoopGroup workerGroup = new NioEventLoopGroup(); //основной пул потоков занимающийся сетевой частью, получить данные, отправидь данные и т.д.
         try {
-            ServerBootstrap b = new ServerBootstrap();
-            b.group(bossGroup, workerGroup)
-                    .channel(NioServerSocketChannel.class)
-                    .childHandler(new ChannelInitializer<SocketChannel>() {
+            ServerBootstrap b = new ServerBootstrap(); //настройка работы сервера
+            b.group(bossGroup, workerGroup) //указываем пулы потоков
+                    .channel(NioServerSocketChannel.class) //для подключения клиентов используем канал NioServerSocketChannel аналог ServerSocket в IO
+                    .childHandler(new ChannelInitializer<SocketChannel>() { //настройка конвеера, для каждого клиента свой. Когда клиент подключается мы должны его проинициализировать
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new DiscardServerHandler());
+                            ch.pipeline().addLast(new DiscardServerHandler()); //и в конвеер клиента добавляем один квадратик(Handler) в данном случае DiscardServerHandler
                         }
                     });
 //                    .childOption(ChannelOption.SO_KEEPALIVE, true);
-            ChannelFuture f = b.bind(8189).sync();
-            f.channel().closeFuture().sync();
+            ChannelFuture f = b.bind(8189).sync(); //запускаем сервер на определенном порту
+            f.channel().closeFuture().sync(); //ожидаем завершение работы сервера
         } finally {
-            workerGroup.shutdownGracefully();
+            workerGroup.shutdownGracefully(); //закрытие пула потоков
             bossGroup.shutdownGracefully();
         }
     }

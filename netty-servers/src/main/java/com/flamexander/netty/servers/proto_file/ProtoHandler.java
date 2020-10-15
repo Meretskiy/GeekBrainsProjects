@@ -61,6 +61,7 @@ public class ProtoHandler extends ChannelInboundHandlerAdapter {
                 }
             }
 
+            //вычитываем последовательно все байты и пишем сразу в файл
             if (currentState == State.FILE) {
                 while (buf.readableBytes() > 0) {
                     out.write(buf.readByte());

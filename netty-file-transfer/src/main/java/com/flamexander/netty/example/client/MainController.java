@@ -18,24 +18,27 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ResourceBundle;
 
+//Управляющий контроллер
 public class MainController implements Initializable {
+   //Текстовое поле с именем интересующего файла
     @FXML
     TextField tfFileName;
-
+    //список локальных файлов
     @FXML
     ListView<String> filesList;
-
+    //при запуске клиента мы подключаемся к серверу.
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Network.start();
-        Thread t = new Thread(() -> {
+        Thread t = new Thread(() -> { //запускаем демон тред который будет ожидать сообщение от сервера
             try {
                 while (true) {
-                    AbstractMessage am = Network.readObject();
-                    if (am instanceof FileMessage) {
-                        FileMessage fm = (FileMessage) am;
+                    AbstractMessage am = Network.readObject(); //тут блокировка, ждем любые сообщения от сервака
+                    if (am instanceof FileMessage) { //если сервак прислал файлМессадж, значит нам пришел файл
+                        FileMessage fm = (FileMessage) am; //кастуем в ФМ
+                        //Вытягиваем из ФМ все байты и записываем этот файл к себе в клиентСторадж
                         Files.write(Paths.get("client_storage/" + fm.getFilename()), fm.getData(), StandardOpenOption.CREATE);
-                        refreshLocalFilesList();
+                        refreshLocalFilesList(); //иобновляем список файлов
                     }
                 }
             } catch (ClassNotFoundException | IOException e) {
@@ -49,6 +52,7 @@ public class MainController implements Initializable {
         refreshLocalFilesList();
     }
 
+    //при нажатии на кнопку скачать клиент посылает в сторону сервака файлРеквест с именем интересующего нас файла
     public void pressOnDownloadBtn(ActionEvent actionEvent) {
         if (tfFileName.getLength() > 0) {
             Network.sendMsg(new FileRequest(tfFileName.getText()));
@@ -56,10 +60,12 @@ public class MainController implements Initializable {
         }
     }
 
+    //обновление списка локальных файлов
     public void refreshLocalFilesList() {
         updateUI(() -> {
             try {
                 filesList.getItems().clear();
+                //очищаем листВью и записываем в нее все файлы которые у нас есть в клаентСторадже
                 Files.list(Paths.get("client_storage")).map(p -> p.getFileName().toString()).forEach(o -> filesList.getItems().add(o));
             } catch (IOException e) {
                 e.printStackTrace();

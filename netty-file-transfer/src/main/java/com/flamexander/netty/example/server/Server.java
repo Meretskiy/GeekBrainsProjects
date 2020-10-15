@@ -12,6 +12,9 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 
+/*
+    Стандартный сервер сериализации: декодер, инкодер и один управляющий хендлер.
+ */
 public class Server {
     public void run() throws Exception {
         EventLoopGroup mainGroup = new NioEventLoopGroup();

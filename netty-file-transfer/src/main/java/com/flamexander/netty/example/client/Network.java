@@ -7,11 +7,15 @@ import io.netty.handler.codec.serialization.ObjectEncoderOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+/*
+    Нетворк построим на статике
+ */
 public class Network {
-    private static Socket socket;
-    private static ObjectEncoderOutputStream out;
-    private static ObjectDecoderInputStream in;
+    private static Socket socket; //сокет соединения с серваком
+    private static ObjectEncoderOutputStream out; //энкодер, исходящий поток для отправки объектов
+    private static ObjectDecoderInputStream in; //декодер, входящий поток для получения объектов
 
+    //При старте мы подключемся к серваку, создаем два этих потока
     public static void start() {
         try {
             socket = new Socket("localhost", 8189);
@@ -21,7 +25,7 @@ public class Network {
             e.printStackTrace();
         }
     }
-
+    //стопаем все и закрываем
     public static void stop() {
         try {
             out.close();
@@ -40,6 +44,7 @@ public class Network {
         }
     }
 
+    //Позволяет отправлять любые сообщения серверу
     public static boolean sendMsg(AbstractMessage msg) {
         try {
             out.writeObject(msg);
@@ -50,6 +55,7 @@ public class Network {
         return false;
     }
 
+    //Позволяет получать любые объекты от сервера. Сидим в блокирующей операции и ждем пока нам сервак что то не пришлет
     public static AbstractMessage readObject() throws ClassNotFoundException, IOException {
         Object obj = in.readObject();
         return (AbstractMessage) obj;
