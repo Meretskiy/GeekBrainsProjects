@@ -147,3 +147,8 @@ nick1 :
 nick1 : /end
 nick1 : 
 nick1 : 
+nick1 : esfs
+nick1 : /exit
+nick1 : 
+nick1 : 
+nick1 : 

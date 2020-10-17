@@ -10,15 +10,17 @@ import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 
 public class ProtoHandler extends ChannelInboundHandlerAdapter {
+    //состояния(ничего не ждем, ждем длинну имени, ждем имя, ждем длинну файла и файл)
     public enum State {
         IDLE, NAME_LENGTH, NAME, FILE_LENGTH, FILE
     }
 
-    private State currentState = State.IDLE;
-    private int nextLength;
-    private long fileLength;
-    private long receivedFileLength;
-    private BufferedOutputStream out;
+    //первоначальное состояние
+    private State currentState = State.IDLE;//ничего не ждем
+    private int nextLength;//не знаем длинну следующего куска
+    private long fileLength;//не знаем длинну файла
+    private long receivedFileLength;//не знаем полученные байты
+    private BufferedOutputStream out;//есть буффер
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {

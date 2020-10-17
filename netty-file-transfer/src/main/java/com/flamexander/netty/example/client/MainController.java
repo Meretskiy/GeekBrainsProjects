@@ -62,7 +62,7 @@ public class MainController implements Initializable {
 
     //обновление списка локальных файлов
     public void refreshLocalFilesList() {
-        updateUI(() -> {
+        Platform.runLater(() -> {
             try {
                 filesList.getItems().clear();
                 //очищаем листВью и записываем в нее все файлы которые у нас есть в клаентСторадже
@@ -71,13 +71,5 @@ public class MainController implements Initializable {
                 e.printStackTrace();
             }
         });
-    }
-
-    public static void updateUI(Runnable r) {
-        if (Platform.isFxApplicationThread()) {
-            r.run();
-        } else {
-            Platform.runLater(r);
-        }
     }
 }

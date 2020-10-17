@@ -20,7 +20,8 @@ public class FileMessage extends AbstractMessage {
     }
 
     public FileMessage(Path path) throws IOException {
-        filename = path.getFileName().toString();
-        data = Files.readAllBytes(path);
+        filename = path.getFileName().toString(); //из пути выдергиваем имя файла
+        //readAllBytes использовать только для заведомо маленьких файлов, он все подгрузит в оперативку
+        data = Files.readAllBytes(path);//в данные мы заливаем байтовый массив со всеми байтами файла по данному пути
     }
 }

@@ -25,6 +25,7 @@
         <module>file-manager</module>
         <module>netty-file-transfer</module>
         <module>netty-servers</module>
+        <module>streamAPI</module>
     </modules>
 
 
